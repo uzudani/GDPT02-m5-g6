@@ -17,7 +17,7 @@ public class LifeController : MonoBehaviour
 
     private void Start()
     {
-        OnHealthChanged.Invoke(_hp, _maxHp);
+        OnHealthChanged?.Invoke(_hp, _maxHp);
     }
 
     public void TakeDamage(float damage)

@@ -12,7 +12,7 @@ public class Pickup : MonoBehaviour
     {
         if (!other.gameObject.CompareTag(_tagPlayer)) return;
 
-        PlayerInventory.Instance.AddItem(_item);
+        PlayerInventory.Instance.AddItem(_item); // Non cerco piu l'inventario nel player (GetComponent), ma prendo l'unico esistente
 
         Destroy(gameObject);
     }

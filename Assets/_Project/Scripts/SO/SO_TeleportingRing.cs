@@ -9,6 +9,6 @@ public class SO_TeleportingRing : SO_Item
 
     public override void Use(GameObject player)
     {
-        PlayerInventory.Instance.StartTeleport(player, chargeTime);
+        PlayerInventory.Instance.StartTeleport(player, chargeTime); // Chiamo l'unico inventario esistente
     }
 }
