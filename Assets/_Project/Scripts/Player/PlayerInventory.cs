@@ -7,11 +7,11 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private Slider _teleportSlider;
     [SerializeField] private GameObject _player;
+    [SerializeField] private List<SO_Item> _itemsList = new List<SO_Item>();
 
     public static PlayerInventory Instance { get; private set; } // Con static adesso appartiene alla classe
     // Getter pubblico setter privato per far leggere a tutti ma modificabile solo da questa classe
 
-    private List<SO_Item> _itemsList = new List<SO_Item>();
 
     private void Awake()
     {

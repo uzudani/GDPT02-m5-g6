@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class TimerManager : MonoBehaviour
 {
-
     [Header("Settings")]
     [SerializeField] private TextMeshProUGUI _timerText;
     [SerializeField] private float _countdownTime = 3f;
 
+    public void StartCountDown(Action onComplete)
+    {
+        StartCoroutine(CountDownLogic(onComplete));
+    }
+
 
     // Funzione da richiamare in PlayerColor (StartCorutine)
-    public IEnumerator StartCountDown()
+    private IEnumerator CountDownLogic(Action onComplete)
     {
         float time = _countdownTime;
 
@@ -23,5 +28,6 @@ public class TimerManager : MonoBehaviour
             yield return null; // Frame successivo
         }
         _timerText.text = "Press F to repeat!";
+        onComplete?.Invoke();
     }
 }
